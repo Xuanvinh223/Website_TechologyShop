@@ -336,7 +336,6 @@
                                             <li>
                                                <a class="nav-link" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false"><img src="views/layouts/assets/img/product/product3.jpg" alt=""></a>
                                             </li>
-
                                         </ul>
                                     </div>    
                                 </div>  

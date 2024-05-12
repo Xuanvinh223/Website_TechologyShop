@@ -1,0 +1,46 @@
+.action_links ul li.add_to_cart input {
+  padding: 0 26px;
+  height: 40px;
+  line-height: 40px;
+  width: auto;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #C70909;
+  color: #ffffff;
+  border: none;
+  /* Loại bỏ viền */
+}
+
+.action_links ul li.add_to_cart input:hover {
+  background: #999;
+  color: #ffffff;
+}
+
+.btn-buy-now {
+  padding: 0 26px;
+  height: 40px;
+  line-height: 40px;
+  width: auto;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #C70909;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  /* Loại bỏ gạch chân mặc định */
+  display: inline-block;
+  /* Chuyển thành block element để có thể thiết lập chiều rộng và chiều cao */
+}
+
+.btn-buy-now:hover {
+  background: #8c0202;
+  /* Màu nền khi di chuột qua */
+}
+
+.rubik-sans_serif{
+  font-family: "Rubik", sans-serif;
+}

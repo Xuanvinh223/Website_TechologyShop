@@ -210,17 +210,21 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="Sellers" role="tabpanel">
                     <div class="row">
-                        <div class="product_carousel product_column5 owl-carousel">
-                            <?php
-                            foreach ($list_product as $item) {
-                                extract($item);
-                                echo '<div class="col-lg-3">
+                        
+                        <?php
+                        foreach ($list_product as $item) {
+                            extract($item);
+                            echo '<div class="col-lg-3">
                                         <div class="product_items">
-                                             <article class="single_product">
+                                             <article class="single_product mb-5">
                                                  <figure>
+                                                    <form action="index.php?page=addToCart" method="post">
+                                                        <input type="hidden" name="id" value="'.$id.'">
+                                                        <input type="hidden" name="name" value="'.$name.'">
+                                                        <input type="hidden" name="price" value="'.$price.'">
                                                      <div class="product_thumb">
-                                                         <a class="primary_img" href="product-details.html"><img src="views/layouts/assets/img/product/product1.jpg" alt=""></a>
-                                                         <a class="secondary_img" href="product-details.html"><img src="views/layouts/assets/img/product/product2.jpg" alt=""></a>
+                                                         <a class="primary_img" href="index.php?page=product-detail&id=' . $id . '"><img src="views/layouts/assets/img/product/product1.jpg" alt=""></a>
+                                                         <a class="secondary_img" href="index.php?page=product-detail&id=' . $id . '"><img src="views/layouts/assets/img/product/product2.jpg" alt=""></a>
                                                          <div class="label_product">
                                                              <span class="label_sale">-56%</span>
                                                          </div>
@@ -230,7 +234,7 @@
                                                      </div>
                                                      <div class="product_content">
                                                          <div class="product_content_inner">
-                                                             <h4 class="product_name"><a href="product-details.html">'.$name.'</a></h4>
+                                                             <h4 class="product_name"><a href="index.php?page=product-detail&id=' . $id . '">' . $name . '</a></h4>
                                                              <div class="product_rating">
                                                                 <ul>
                                                                     <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
@@ -242,24 +246,24 @@
                                                              </div>
                                                              <div class="price_box"> 
                                                                  <span class="old_price">$320.00</span> 
-                                                                 <span class="current_price">$'.$price.'</span>
+                                                                 <span class="current_price">$' . $price . '</span>
                                                              </div>
                                                          </div> 
                                                          <div class="action_links">
                                                               <ul>
-                                                                 <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to cart</a></li>
+                                                                 <li class="add_to_cart"><input type="submit" name="btnAddToCart" value="Add to cart"></input></li>
                                                                  <li class="wishlist"><a href="wishlist.html"  title="Add to Wishlist"><i class="icon-heart"></i></a></li>
                                                                  <li class="compare"><a href="compare.html" title="Add to Compare"><i class="icon-rotate-cw"></i></a></li>  
                                                              </ul>
                                                          </div>  
                                                      </div>
+                                                     </form>
                                                  </figure>
                                              </article>
                                       </div>
                                     </div>';
-                            }
-                            ?>
-                        </div>
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="Featured" role="tabpanel">
@@ -270,9 +274,11 @@
                                     <article class="single_product">
                                         <figure>
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="product-details.html"><img
+                                                <a class="primary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product7.jpg" alt=""></a>
-                                                <a class="secondary_img" href="product-details.html"><img
+                                                <a class="secondary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product8.jpg" alt=""></a>
 
                                                 <div class="label_product">
@@ -286,7 +292,8 @@
                                             <div class="product_content">
                                                 <div class="product_content_inner">
                                                     <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                    <h4 class="product_name"><a href="product-details.html">Ras Neque
+                                                    <h4 class="product_name"><a
+                                                            href="index.php?page=product-detail&id='.$id.'">Ras Neque
                                                             Metus</a></h4>
                                                     <div class="product_rating">
                                                         <ul>
@@ -309,7 +316,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li class="add_to_cart"><a href="cart.html"
+                                                        <li class="add_to_cart"><a href="index.php?page=cart&id='.$id.'"
                                                                 title="Add to cart">Add to cart</a></li>
                                                         <li class="wishlist"><a href="wishlist.html"
                                                                 title="Add to Wishlist"><i class="icon-heart"></i></a>
@@ -325,9 +332,11 @@
                                     <article class="single_product">
                                         <figure>
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="product-details.html"><img
+                                                <a class="primary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product9.jpg" alt=""></a>
-                                                <a class="secondary_img" href="product-details.html"><img
+                                                <a class="secondary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product10.jpg" alt=""></a>
                                                 <div class="label_product">
                                                     <span class="label_sale">-56%</span>
@@ -340,7 +349,8 @@
                                             <div class="product_content">
                                                 <div class="product_content_inner">
                                                     <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                    <h4 class="product_name"><a href="product-details.html">Mauris Vel
+                                                    <h4 class="product_name"><a
+                                                            href="index.php?page=product-detail&id='.$id.'">Mauris Vel
                                                             Tellus</a></h4>
                                                     <div class="product_rating">
                                                         <ul>
@@ -363,7 +373,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li class="add_to_cart"><a href="cart.html"
+                                                        <li class="add_to_cart"><a href="index.php?page=cart&id='.$id.'"
                                                                 title="Add to cart">Add to cart</a></li>
                                                         <li class="wishlist"><a href="wishlist.html"
                                                                 title="Add to Wishlist"><i class="icon-heart"></i></a>
@@ -389,9 +399,11 @@
                                     <article class="single_product">
                                         <figure>
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="product-details.html"><img
+                                                <a class="primary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product7.jpg" alt=""></a>
-                                                <a class="secondary_img" href="product-details.html"><img
+                                                <a class="secondary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product8.jpg" alt=""></a>
                                                 <div class="label_product">
                                                     <span class="label_sale">-52%</span>
@@ -404,7 +416,8 @@
                                             <div class="product_content">
                                                 <div class="product_content_inner">
                                                     <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                    <h4 class="product_name"><a href="product-details.html">Nunc Neque
+                                                    <h4 class="product_name"><a
+                                                            href="index.php?page=product-detail&id='.$id.'">Nunc Neque
                                                             Eros</a></h4>
                                                     <div class="product_rating">
                                                         <ul>
@@ -427,7 +440,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li class="add_to_cart"><a href="cart.html"
+                                                        <li class="add_to_cart"><a href="index.php?page=cart&id='.$id.'"
                                                                 title="Add to cart">Add to cart</a></li>
                                                         <li class="wishlist"><a href="wishlist.html"
                                                                 title="Add to Wishlist"><i class="icon-heart"></i></a>
@@ -443,9 +456,11 @@
                                     <article class="single_product">
                                         <figure>
                                             <div class="product_thumb">
-                                                <a class="primary_img" href="product-details.html"><img
+                                                <a class="primary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product9.jpg" alt=""></a>
-                                                <a class="secondary_img" href="product-details.html"><img
+                                                <a class="secondary_img"
+                                                    href="index.php?page=product-detail&id='.$id.'"><img
                                                         src="views/layouts/assets/img/product/product10.jpg" alt=""></a>
                                                 <div class="label_product">
                                                     <span class="label_sale">-44%</span>
@@ -458,7 +473,8 @@
                                             <div class="product_content">
                                                 <div class="product_content_inner">
                                                     <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                    <h4 class="product_name"><a href="product-details.html">Cas Meque
+                                                    <h4 class="product_name"><a
+                                                            href="index.php?page=product-detail&id='.$id.'">Cas Meque
                                                             Metus</a></h4>
                                                     <div class="product_rating">
                                                         <ul>
@@ -481,7 +497,7 @@
                                                 </div>
                                                 <div class="action_links">
                                                     <ul>
-                                                        <li class="add_to_cart"><a href="cart.html"
+                                                        <li class="add_to_cart"><a href="index.php?page=cart&id='.$id.'"
                                                                 title="Add to cart">Add to cart</a></li>
                                                         <li class="wishlist"><a href="wishlist.html"
                                                                 title="Add to Wishlist"><i class="icon-heart"></i></a>
@@ -548,9 +564,9 @@
                             <article class="single_product">
                                 <figure>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img
+                                        <a class="primary_img" href="index.php?page=product-detail&id='.$id.'"><img
                                                 src="views/layouts/assets/img/product/product7.jpg" alt=""></a>
-                                        <a class="secondary_img" href="product-details.html"><img
+                                        <a class="secondary_img" href="index.php?page=product-detail&id='.$id.'"><img
                                                 src="views/layouts/assets/img/product/product8.jpg" alt=""></a>
                                         <div class="label_product">
                                             <span class="label_sale">-52%</span>
@@ -558,7 +574,8 @@
                                     </div>
                                     <div class="product_content">
                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                        <h4 class="product_name"><a href="product-details.html">Nunc Neque Eros</a></h4>
+                                        <h4 class="product_name"><a href="index.php?page=product-detail&id='.$id.'">Nunc
+                                                Neque Eros</a></h4>
                                         <div class="product_rating">
                                             <ul>
                                                 <li><a href="#"><i class="ion-android-star-outline"></i></a></li>
@@ -578,7 +595,8 @@
                                         </div>
                                         <div class="action_links">
                                             <ul>
-                                                <li class="add_to_cart"><a href="cart.html" title="Add to cart">Add to
+                                                <li class="add_to_cart"><a href="index.php?page=cart&id='.$id.'"
+                                                        title="Add to cart">Add to
                                                         cart</a></li>
                                                 <li class="quick_view"><a href="#" data-bs-toggle="modal"
                                                         data-bs-target="#modal_box" title="quick view"><i
@@ -602,10 +620,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product9.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product10.jpg"
                                                             alt=""></a>
                                                     <div class="label_product">
@@ -619,7 +639,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Cas
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Cas
                                                                 Meque Metus</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -647,7 +668,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i
@@ -665,10 +687,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product3.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product4.jpg"
                                                             alt=""></a>
                                                     <div class="label_product">
@@ -682,7 +706,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Lorem
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Lorem
                                                                 Ipsum Lec</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -710,7 +735,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i
@@ -728,10 +754,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product9.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product10.jpg"
                                                             alt=""></a>
                                                     <div class="label_product">
@@ -745,7 +773,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Mauris
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Mauris
                                                                 Vel Tellus</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -773,7 +802,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i
@@ -791,10 +821,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product11.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product12.jpg"
                                                             alt=""></a>
                                                     <div class="label_product">
@@ -808,7 +840,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Donec
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Donec
                                                                 Non Est</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -836,7 +869,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i
@@ -854,10 +888,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product1.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product2.jpg"
                                                             alt=""></a>
                                                     <div class="label_product">
@@ -871,7 +907,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Mauris
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Mauris
                                                                 Vel Tellus</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -899,7 +936,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i
@@ -917,10 +955,12 @@
                                         <article class="single_product">
                                             <figure>
                                                 <div class="product_thumb">
-                                                    <a class="primary_img" href="product-details.html"><img
+                                                    <a class="primary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product5.jpg"
                                                             alt=""></a>
-                                                    <a class="secondary_img" href="product-details.html"><img
+                                                    <a class="secondary_img"
+                                                        href="index.php?page=product-detail&id='.$id.'"><img
                                                             src="views/layouts/assets/img/product/product6.jpg"
                                                             alt=""></a>
 
@@ -935,7 +975,8 @@
                                                 <div class="product_content">
                                                     <div class="product_content_inner">
                                                         <p class="manufacture_product"><a href="#">Parts</a></p>
-                                                        <h4 class="product_name"><a href="product-details.html">Etiam
+                                                        <h4 class="product_name"><a
+                                                                href="index.php?page=product-detail&id='.$id.'">Etiam
                                                                 Gravida</a></h4>
                                                         <div class="product_rating">
                                                             <ul>
@@ -963,7 +1004,8 @@
                                                     </div>
                                                     <div class="action_links">
                                                         <ul>
-                                                            <li class="add_to_cart"><a href="cart.html"
+                                                            <li class="add_to_cart"><a
+                                                                    href="index.php?page=cart&id='.$id.'"
                                                                     title="Add to cart">Add to cart</a></li>
                                                             <li class="wishlist"><a href="wishlist.html"
                                                                     title="Add to Wishlist"><i

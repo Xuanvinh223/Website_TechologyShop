@@ -18,6 +18,7 @@
     
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="views/layouts/assets/css/style.css">
+    <link rel="stylesheet" href="views/layouts/assets/css/css.css">
 
 </head>
 
@@ -415,15 +416,12 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#"> Lighting</a></li>
-                                        <li><a href="#"> Accessories</a></li>
-                                        <li><a href="#">Body Parts</a></li>
-                                        <li><a href="#">Networking</a></li>
-                                        <li><a href="#">Perfomance Filters</a></li>
-                                        <li><a href="#"> Engine Parts</a></li>
-                                        <li class="hidden"><a href="shop-left-sidebar.html">New Sofas</a></li>
-                                        <li class="hidden"><a href="shop-left-sidebar.html">Sleight Sofas</a></li>
-                                        <li><a href="#" id="more-btn"><i class="fa fa-plus" aria-hidden="true"></i> More Categories</a></li>
+                                        <?php
+                                            foreach ($list_catelogy as $item) {
+                                                extract($item);
+                                                echo ' <li><a href="index.php?page=shop&catalogy='.$id.'">'.$name.'</a></li>';
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>

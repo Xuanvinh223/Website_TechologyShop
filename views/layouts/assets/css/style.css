@@ -3920,7 +3920,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-right: 10px;
   }
 }
-.action_links ul li.add_to_cart a {
+.action_links ul li.add_to_cart a, input, button {
   padding: 0 26px;
   height: 40px;
   line-height: 40px;

@@ -36,3 +36,45 @@ function get_one($sql)
     $conn = null; // Đóng kết nối đến cơ sở dữ liệu
     return $data; // Trả về dữ liệu
 }
+
+function insert($sql)
+{
+    $conn = connect();
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $conn = null;
+        return true; // Trả về true nếu chèn thành công
+    } catch (PDOException $e) {
+        echo "Insert failed: " . $e->getMessage();
+        return false; // Trả về false nếu có lỗi
+    }
+}
+
+function update($sql)
+{
+    $conn = connect();
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $conn = null;
+        return true; // Trả về true nếu cập nhật thành công
+    } catch (PDOException $e) {
+        echo "Update failed: " . $e->getMessage();
+        return false; // Trả về false nếu có lỗi
+    }
+}
+
+function del($sql)
+{
+    $conn = connect();
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $conn = null;
+        return true; // Trả về true nếu xóa thành công
+    } catch (PDOException $e) {
+        echo "Delete failed: " . $e->getMessage();
+        return false; // Trả về false nếu có lỗi
+    }
+}
